@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:5000/api/interview";
+const API_BASE = "https://ai-interview-simulato.onrender.com/api/interview";
 
 export const getQuestion = async (topic: string) => {
   const res = await axios.post(`${API_BASE}/question`, { topic });
@@ -25,10 +25,9 @@ export const askAI = async (prompt: string) => {
   return res.data.answer;
 };
 
-
 export const analyzeImage = async (base64Image: string) => {
   const res = await axios.post(
-    "http://localhost:5000/api/ai/image",
+    "https://ai-interview-simulato.onrender.com/api/ai/image",
     {
       image: base64Image,
     }
